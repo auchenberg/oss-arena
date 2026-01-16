@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2026-01-16T03:31:44.993Z",
+  "lastUpdated": "2026-01-16T06:17:26.304Z",
   "agents": [
     {
       "id": "copilot",
       "name": "GitHub Copilot",
       "color": "#6e40c9",
       "stats": {
-        "totalPRs": 883564,
-        "readyPRs": 625248,
-        "mergedPRs": 595174,
+        "totalPRs": 884297,
+        "readyPRs": 625769,
+        "mergedPRs": 595655,
         "successRate": 95.19,
-        "totalCommits": 1624544
+        "totalCommits": 1626267
       }
     },
     {
@@ -18,11 +18,11 @@
       "name": "Cursor",
       "color": "#00d4aa",
       "stats": {
-        "totalPRs": 268389,
-        "readyPRs": 157721,
-        "mergedPRs": 151505,
+        "totalPRs": 268464,
+        "readyPRs": 157770,
+        "mergedPRs": 151556,
         "successRate": 96.06,
-        "totalCommits": 53958
+        "totalCommits": 46317
       }
     },
     {
@@ -30,11 +30,11 @@
       "name": "OpenAI Codex",
       "color": "#10a37f",
       "stats": {
-        "totalPRs": 2833080,
-        "readyPRs": 2811251,
-        "mergedPRs": 2454702,
+        "totalPRs": 2833506,
+        "readyPRs": 2811671,
+        "mergedPRs": 2455040,
         "successRate": 87.32,
-        "totalCommits": 30212
+        "totalCommits": 30226
       }
     },
     {
@@ -42,11 +42,11 @@
       "name": "Devin",
       "color": "#ff6b6b",
       "stats": {
-        "totalPRs": 59370,
-        "readyPRs": 57587,
-        "mergedPRs": 36647,
-        "successRate": 63.64,
-        "totalCommits": 129254
+        "totalPRs": 59383,
+        "readyPRs": 57600,
+        "mergedPRs": 36661,
+        "successRate": 63.65,
+        "totalCommits": 129735
       }
     },
     {
@@ -54,11 +54,11 @@
       "name": "Claude Code",
       "color": "#d97706",
       "stats": {
-        "totalPRs": 3830,
-        "readyPRs": 3784,
+        "totalPRs": 3831,
+        "readyPRs": 3785,
         "mergedPRs": 2869,
-        "successRate": 75.82,
-        "totalCommits": 3176372
+        "successRate": 75.8,
+        "totalCommits": 2375015
       }
     },
     {
@@ -66,11 +66,11 @@
       "name": "Jules",
       "color": "#4285f4",
       "stats": {
-        "totalPRs": 238354,
-        "readyPRs": 162509,
-        "mergedPRs": 154940,
+        "totalPRs": 238741,
+        "readyPRs": 162583,
+        "mergedPRs": 155011,
         "successRate": 95.34,
-        "totalCommits": 520950
+        "totalCommits": 521224
       }
     },
     {
@@ -78,11 +78,11 @@
       "name": "Codegen",
       "color": "#9333ea",
       "stats": {
-        "totalPRs": 9162,
-        "readyPRs": 6178,
-        "mergedPRs": 3839,
-        "successRate": 62.14,
-        "totalCommits": 8632
+        "totalPRs": 9164,
+        "readyPRs": 6180,
+        "mergedPRs": 3841,
+        "successRate": 62.15,
+        "totalCommits": 8635
       }
     },
     {
@@ -90,11 +90,11 @@
       "name": "Vercel",
       "color": "#000000",
       "stats": {
-        "totalPRs": 93354,
-        "readyPRs": 47909,
-        "mergedPRs": 46926,
-        "successRate": 97.95,
-        "totalCommits": 116443
+        "totalPRs": 93484,
+        "readyPRs": 47979,
+        "mergedPRs": 46990,
+        "successRate": 97.94,
+        "totalCommits": 116496
       }
     }
   ]
