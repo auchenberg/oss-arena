@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2026-01-16T02:52:20.138Z",
+  "lastUpdated": "2026-01-16T03:31:44.993Z",
   "agents": [
     {
       "id": "copilot",
       "name": "GitHub Copilot",
       "color": "#6e40c9",
       "stats": {
-        "totalPRs": 883480,
-        "readyPRs": 625179,
-        "mergedPRs": 595093,
+        "totalPRs": 883564,
+        "readyPRs": 625248,
+        "mergedPRs": 595174,
         "successRate": 95.19,
-        "totalCommits": 1624131
+        "totalCommits": 1624544
       }
     },
     {
@@ -18,11 +18,11 @@
       "name": "Cursor",
       "color": "#00d4aa",
       "stats": {
-        "totalPRs": 268374,
-        "readyPRs": 157713,
-        "mergedPRs": 151494,
+        "totalPRs": 268389,
+        "readyPRs": 157721,
+        "mergedPRs": 151505,
         "successRate": 96.06,
-        "totalCommits": 46075
+        "totalCommits": 53958
       }
     },
     {
@@ -30,11 +30,11 @@
       "name": "OpenAI Codex",
       "color": "#10a37f",
       "stats": {
-        "totalPRs": 2832882,
-        "readyPRs": 2811055,
-        "mergedPRs": 2454525,
+        "totalPRs": 2833080,
+        "readyPRs": 2811251,
+        "mergedPRs": 2454702,
         "successRate": 87.32,
-        "totalCommits": 30206
+        "totalCommits": 30212
       }
     },
     {
@@ -42,11 +42,11 @@
       "name": "Devin",
       "color": "#ff6b6b",
       "stats": {
-        "totalPRs": 59366,
-        "readyPRs": 57583,
-        "mergedPRs": 36642,
-        "successRate": 63.63,
-        "totalCommits": 129244
+        "totalPRs": 59370,
+        "readyPRs": 57587,
+        "mergedPRs": 36647,
+        "successRate": 63.64,
+        "totalCommits": 129254
       }
     },
     {
@@ -58,7 +58,7 @@
         "readyPRs": 3784,
         "mergedPRs": 2869,
         "successRate": 75.82,
-        "totalCommits": 3751827
+        "totalCommits": 3176372
       }
     },
     {
@@ -66,11 +66,11 @@
       "name": "Jules",
       "color": "#4285f4",
       "stats": {
-        "totalPRs": 238024,
-        "readyPRs": 162223,
-        "mergedPRs": 154675,
-        "successRate": 95.35,
-        "totalCommits": 520855
+        "totalPRs": 238354,
+        "readyPRs": 162509,
+        "mergedPRs": 154940,
+        "successRate": 95.34,
+        "totalCommits": 520950
       }
     },
     {
@@ -90,11 +90,11 @@
       "name": "Vercel",
       "color": "#000000",
       "stats": {
-        "totalPRs": 93328,
-        "readyPRs": 47892,
-        "mergedPRs": 46909,
+        "totalPRs": 93354,
+        "readyPRs": 47909,
+        "mergedPRs": 46926,
         "successRate": 97.95,
-        "totalCommits": 116425
+        "totalCommits": 116443
       }
     }
   ]
