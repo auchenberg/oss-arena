@@ -211,7 +211,8 @@ export function TrendChart({
               fontSize={12}
               tickFormatter={(value) => {
                 const date = new Date(value);
-                return `${date.getMonth() + 1}/${date.getDate()}`;
+                // Use UTC methods to match stored UTC dates
+                return `${date.getUTCMonth() + 1}/${date.getUTCDate()}`;
               }}
             />
             <YAxis

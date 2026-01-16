@@ -206,6 +206,7 @@ async function collectReviews() {
 }
 
 async function saveHistorySnapshot(contributions: any[], reviews: any[]) {
+  // Use UTC date for consistent data storage
   const today = new Date().toISOString().split('T')[0];
   const historyPath = path.join(process.cwd(), 'data', 'history', `${today}.json`);
 

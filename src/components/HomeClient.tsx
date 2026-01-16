@@ -85,7 +85,7 @@ export function HomeClient({ contributions, reviews, historyData }: HomeClientPr
                 activeTab === 'contributions'
                   ? contributions.lastUpdated
                   : reviews.lastUpdated
-              ).toLocaleString()}
+              ).toLocaleString('en-US', { timeZone: 'UTC' })} UTC
             </time>
           </p>
           <p className="mt-2">
