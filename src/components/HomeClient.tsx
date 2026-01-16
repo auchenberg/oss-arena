@@ -23,10 +23,10 @@ export function HomeClient({ contributions, reviews, historyData }: HomeClientPr
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div>
             <h1 className="text-2xl font-bold text-gray-900">
-              SWE Arena
+              OSS Arena
             </h1>
             <p className="text-sm text-gray-500 mt-1">
-              Track AI coding agents contributing to open source
+              Tracking open-source contributions by AI Agents
             </p>
           </div>
         </div>
@@ -95,6 +95,21 @@ export function HomeClient({ contributions, reviews, historyData }: HomeClientPr
               className="text-blue-500 hover:text-blue-600"
             >
               GitHub Search API
+            </a>
+            {' · '}
+            <a
+              href="https://github.com/auchenberg/oss-arena"
+              className="text-blue-500 hover:text-blue-600"
+            >
+              GitHub
+            </a>
+            {' · '}
+            by{' '}
+            <a
+              href="https://twitter.com/auchenberg"
+              className="text-blue-500 hover:text-blue-600"
+            >
+              @auchenberg
             </a>
           </p>
         </footer>

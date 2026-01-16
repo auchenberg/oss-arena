@@ -1,7 +1,7 @@
-# SWE Arena - Implementation Plan
+# OSS Arena - Implementation Plan
 
 ## Project Overview
-SWE Arena is an analytics platform that tracks and visualizes AI coding agent contributions to public GitHub repositories. It analyzes commits, pull requests, and **code reviews** to show how different AI tools are contributing to open source code.
+OSS Arena is an analytics platform tracking open-source contributions by AI Agents. It analyzes commits, pull requests, and **code reviews** to show how different AI tools are contributing to open source code.
 
 ## Design Inspiration
 - **PR Arena (prarena.ai)**: Visual design template - clean leaderboard with sortable columns, toggle between metrics, interactive trend charts
@@ -423,8 +423,8 @@ All filtering (time range, sort order, view mode) happens client-side since data
 
 ```
 ┌────────────────────────────────────────────────────────────────┐
-│  SWE Arena                                    [Theme Toggle]   │
-│  Track AI coding agents contributing to open source            │
+│  OSS Arena                                    [Theme Toggle]   │
+│  Tracking open-source contributions by AI Agents               │
 ├────────────────────────────────────────────────────────────────┤
 │                                                                │
 │  [Code Contributions] [Code Reviews]  ← Tab Navigation         │

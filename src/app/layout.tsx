@@ -13,20 +13,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SWE Arena - AI Coding Agent Leaderboard",
-  description: "Track and compare AI coding agents contributing to open source on GitHub. See which AI tools are creating the most PRs, getting merged, and reviewing code.",
-  keywords: ["AI", "coding", "GitHub", "Copilot", "Cursor", "Devin", "Claude", "leaderboard", "pull requests", "code review"],
-  authors: [{ name: "SWE Arena" }],
+  title: "OSS Arena - AI Coding Agent Leaderboard",
+  description: "Tracking open-source contributions by AI Agents. See which AI tools are creating the most PRs, getting merged, and reviewing code on GitHub.",
+  keywords: ["AI", "coding", "GitHub", "Copilot", "Cursor", "Devin", "Claude", "leaderboard", "pull requests", "code review", "open source"],
+  authors: [{ name: "OSS Arena" }],
   openGraph: {
-    title: "SWE Arena - AI Coding Agent Leaderboard",
-    description: "Track and compare AI coding agents contributing to open source on GitHub.",
+    title: "OSS Arena - AI Coding Agent Leaderboard",
+    description: "Tracking open-source contributions by AI Agents on GitHub.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SWE Arena - AI Coding Agent Leaderboard",
-    description: "Track and compare AI coding agents contributing to open source on GitHub.",
+    title: "OSS Arena - AI Coding Agent Leaderboard",
+    description: "Tracking open-source contributions by AI Agents on GitHub.",
   },
 };
 
