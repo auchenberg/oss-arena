@@ -1,0 +1,82 @@
+{
+  "lastUpdated": "2026-01-16T00:48:22.034Z",
+  "agents": [
+    {
+      "id": "copilot",
+      "name": "GitHub Copilot",
+      "color": "#6e40c9",
+      "stats": {
+        "totalPRs": 882979,
+        "readyPRs": 624826,
+        "mergedPRs": 594777,
+        "successRate": 95.19
+      }
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "color": "#00d4aa",
+      "stats": {
+        "totalPRs": 268339,
+        "readyPRs": 157695,
+        "mergedPRs": 151480,
+        "successRate": 96.06
+      }
+    },
+    {
+      "id": "codex",
+      "name": "OpenAI Codex",
+      "color": "#10a37f",
+      "stats": {
+        "totalPRs": 2832322,
+        "readyPRs": 2810497,
+        "mergedPRs": 2454047,
+        "successRate": 87.32
+      }
+    },
+    {
+      "id": "devin",
+      "name": "Devin",
+      "color": "#ff6b6b",
+      "stats": {
+        "totalPRs": 59350,
+        "readyPRs": 57567,
+        "mergedPRs": 36632,
+        "successRate": 63.63
+      }
+    },
+    {
+      "id": "claude",
+      "name": "Claude Code",
+      "color": "#d97706",
+      "stats": {
+        "totalPRs": 3826,
+        "readyPRs": 3780,
+        "mergedPRs": 2868,
+        "successRate": 75.87
+      }
+    },
+    {
+      "id": "jules",
+      "name": "Jules",
+      "color": "#4285f4",
+      "stats": {
+        "totalPRs": 0,
+        "readyPRs": 0,
+        "mergedPRs": 0,
+        "successRate": 0
+      }
+    },
+    {
+      "id": "codegen",
+      "name": "Codegen",
+      "color": "#9333ea",
+      "stats": {
+        "totalPRs": 9162,
+        "readyPRs": 6178,
+        "mergedPRs": 3839,
+        "successRate": 62.14
+      }
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "date": "2026-01-16",
+  "contributions": {
+    "copilot": {
+      "prs": 882979,
+      "merged": 594777
+    },
+    "cursor": {
+      "prs": 268339,
+      "merged": 151480
+    },
+    "codex": {
+      "prs": 2832322,
+      "merged": 2454047
+    },
+    "devin": {
+      "prs": 59350,
+      "merged": 36632
+    },
+    "claude": {
+      "prs": 3826,
+      "merged": 2868
+    },
+    "jules": {
+      "prs": 0,
+      "merged": 0
+    },
+    "codegen": {
+      "prs": 9162,
+      "merged": 3839
+    }
+  },
+  "reviews": {
+    "coderabbit": {
+      "count": 2361074
+    },
+    "ellipsis": {
+      "count": 60111
+    },
+    "sourcery": {
+      "count": 456192
+    }
+  }
+}

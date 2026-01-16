@@ -1,0 +1,75 @@
+{
+  "lastUpdated": "2026-01-16T00:48:22.034Z",
+  "agents": [
+    {
+      "id": "coderabbit",
+      "name": "CodeRabbit",
+      "color": "#f97316",
+      "stats": {
+        "totalReviews": 2361074,
+        "last7Days": 59563,
+        "trend": 0
+      }
+    },
+    {
+      "id": "ellipsis",
+      "name": "Ellipsis",
+      "color": "#06b6d4",
+      "stats": {
+        "totalReviews": 60111,
+        "last7Days": 963,
+        "trend": 0
+      }
+    },
+    {
+      "id": "sourcery",
+      "name": "Sourcery",
+      "color": "#ec4899",
+      "stats": {
+        "totalReviews": 456192,
+        "last7Days": 3880,
+        "trend": 0
+      }
+    },
+    {
+      "id": "greptile",
+      "name": "Greptile",
+      "color": "#22c55e",
+      "stats": {
+        "totalReviews": 0,
+        "last7Days": 0,
+        "trend": 0
+      }
+    },
+    {
+      "id": "qodo",
+      "name": "Qodo",
+      "color": "#8b5cf6",
+      "stats": {
+        "totalReviews": 0,
+        "last7Days": 0,
+        "trend": 0
+      }
+    },
+    {
+      "id": "mesa",
+      "name": "Mesa",
+      "color": "#0ea5e9",
+      "stats": {
+        "totalReviews": 0,
+        "last7Days": 0,
+        "trend": 0
+      }
+    },
+    {
+      "id": "vercel",
+      "name": "Vercel Agent",
+      "color": "#000000",
+      "stats": {
+        "totalReviews": 0,
+        "last7Days": 0,
+        "trend": 0
+      }
+    }
+  ]
+}
