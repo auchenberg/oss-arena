@@ -47,9 +47,33 @@ export function HomeClient({ contributions, reviews, historyData }: HomeClientPr
           )}
         </div>
 
-        {/* Trend Chart (only for contributions) */}
+        {/* Charts (only for contributions) */}
         {activeTab === 'contributions' && (
-          <TrendChart agents={contributions.agents} historyData={historyData} />
+          <div className="space-y-8">
+            {/* Ranking Over Time */}
+            <TrendChart
+              agents={contributions.agents}
+              historyData={historyData}
+              metric="ranking"
+              title="Ranking Over Time"
+            />
+
+            {/* Total PRs Over Time */}
+            <TrendChart
+              agents={contributions.agents}
+              historyData={historyData}
+              metric="prs"
+              title="Total PRs Over Time"
+            />
+
+            {/* Total Commits Over Time */}
+            <TrendChart
+              agents={contributions.agents}
+              historyData={historyData}
+              metric="commits"
+              title="Total Commits Over Time"
+            />
+          </div>
         )}
 
         {/* Footer Info */}

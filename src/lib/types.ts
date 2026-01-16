@@ -38,7 +38,7 @@ export interface ReviewsData {
 
 export interface HistoryEntry {
   date: string;
-  contributions: Record<string, { prs: number; merged: number }>;
+  contributions: Record<string, { prs: number; merged: number; commits?: number }>;
   reviews: Record<string, { count: number }>;
 }
 

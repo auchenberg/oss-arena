@@ -5,24 +5,28 @@ import * as path from 'path';
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 
 // Agent configuration for data collection
+// Note: For commit queries, use 'author:USERNAME' for bot accounts, 'author-email:EMAIL' for email-based searches
 const contributionAgents = [
-  { id: 'copilot', name: 'GitHub Copilot', color: '#6e40c9', prQuery: 'head:copilot/', commitQuery: 'author:copilot@github.com' },
-  { id: 'cursor', name: 'Cursor', color: '#00d4aa', prQuery: 'head:cursor/', commitQuery: null },
-  { id: 'codex', name: 'OpenAI Codex', color: '#10a37f', prQuery: 'head:codex/', commitQuery: null },
+  { id: 'copilot', name: 'GitHub Copilot', color: '#6e40c9', prQuery: 'head:copilot/', commitQuery: 'author:copilot-swe-agent[bot]' },
+  { id: 'cursor', name: 'Cursor', color: '#00d4aa', prQuery: 'head:cursor/', commitQuery: '"Co-authored-by: Cursor"' },
+  { id: 'codex', name: 'OpenAI Codex', color: '#10a37f', prQuery: 'head:codex/', commitQuery: '"OpenAI Codex"' },
   { id: 'devin', name: 'Devin', color: '#ff6b6b', prQuery: 'author:devin-ai-integration[bot]', commitQuery: 'author:devin-ai-integration[bot]' },
-  { id: 'claude', name: 'Claude Code', color: '#d97706', prQuery: 'author:app/claude', commitQuery: 'author:noreply@anthropic.com' },
-  { id: 'jules', name: 'Jules', color: '#4285f4', prQuery: 'author:jules-google[bot]', commitQuery: 'author:jules-google[bot]' },
+  { id: 'claude', name: 'Claude Code', color: '#d97706', prQuery: 'author:app/claude', commitQuery: '"Generated with Claude Code"' },
+  { id: 'jules', name: 'Jules', color: '#4285f4', prQuery: 'author:google-labs-jules[bot]', commitQuery: 'author:google-labs-jules[bot]' },
   { id: 'codegen', name: 'Codegen', color: '#9333ea', prQuery: 'author:codegen-sh[bot]', commitQuery: 'author:codegen-sh[bot]' },
+  { id: 'vercel', name: 'Vercel', color: '#000000', prQuery: 'author:vercel[bot]', commitQuery: 'author:vercel[bot]' },
 ];
 
 const reviewAgents = [
   { id: 'coderabbit', name: 'CodeRabbit', color: '#f97316', query: 'commenter:coderabbitai[bot]' },
   { id: 'ellipsis', name: 'Ellipsis', color: '#06b6d4', query: 'commenter:ellipsis-dev[bot]' },
   { id: 'sourcery', name: 'Sourcery', color: '#ec4899', query: 'commenter:sourcery-ai[bot]' },
-  { id: 'greptile', name: 'Greptile', color: '#22c55e', query: 'commenter:greptileai[bot]' },
-  { id: 'qodo', name: 'Qodo', color: '#8b5cf6', query: 'commenter:qodo-merge-pro[bot]' },
-  { id: 'mesa', name: 'Mesa', color: '#0ea5e9', query: 'commenter:mesa-dev[bot]' },
-  { id: 'vercel', name: 'Vercel Agent', color: '#000000', query: 'commenter:vercel-agent[bot]' },
+  { id: 'greptile', name: 'Greptile', color: '#22c55e', query: 'commenter:greptile-apps[bot]' },
+  // Note: Qodo Merge (qodo-merge) is a private GitHub App, cannot be searched publicly
+  // { id: 'qodo', name: 'Qodo', color: '#8b5cf6', query: 'commenter:qodo-merge[bot]' },
+  // Note: Mesa and Vercel Agent bots not publicly searchable on GitHub
+  // { id: 'mesa', name: 'Mesa', color: '#0ea5e9', query: 'commenter:mesa-dev[bot]' },
+  // { id: 'vercel', name: 'Vercel Agent', color: '#000000', query: 'commenter:vercel-agent[bot]' },
 ];
 
 // Delay helper to respect rate limits
@@ -208,9 +212,13 @@ async function saveHistorySnapshot(contributions: any[], reviews: any[]) {
   const historyData = {
     date: today,
     contributions: contributions.reduce((acc, agent) => {
-      acc[agent.id] = { prs: agent.stats.totalPRs, merged: agent.stats.mergedPRs };
+      acc[agent.id] = {
+        prs: agent.stats.totalPRs,
+        merged: agent.stats.mergedPRs,
+        commits: agent.stats.totalCommits ?? 0,
+      };
       return acc;
-    }, {} as Record<string, { prs: number; merged: number }>),
+    }, {} as Record<string, { prs: number; merged: number; commits: number }>),
     reviews: reviews.reduce((acc, agent) => {
       acc[agent.id] = { count: agent.stats.totalReviews };
       return acc;
