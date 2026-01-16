@@ -4,6 +4,7 @@ export interface AgentDetection {
   botIds?: number[];
   coAuthorEmails?: string[];
   commitPatterns?: string[];
+  commitQuery?: string; // Query for searching commits directly
 }
 
 export interface AgentConfig {

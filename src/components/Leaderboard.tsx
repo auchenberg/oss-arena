@@ -17,19 +17,21 @@ function formatNumber(num: number): string {
   return num.toLocaleString();
 }
 
+type ExtendedSortField = SortField | 'totalCommits';
+
 export function Leaderboard({ agents }: LeaderboardProps) {
-  const [sortField, setSortField] = useState<SortField>('mergedPRs');
+  const [sortField, setSortField] = useState<ExtendedSortField>('mergedPRs');
   const [sortDirection, setSortDirection] = useState<SortDirection>('desc');
 
   const sortedAgents = useMemo(() => {
     return [...agents].sort((a, b) => {
-      const aVal = a.stats[sortField];
-      const bVal = b.stats[sortField];
+      const aVal = (a.stats as unknown as Record<string, number>)[sortField] ?? 0;
+      const bVal = (b.stats as unknown as Record<string, number>)[sortField] ?? 0;
       return sortDirection === 'desc' ? bVal - aVal : aVal - bVal;
     });
   }, [agents, sortField, sortDirection]);
 
-  const handleSort = (field: SortField) => {
+  const handleSort = (field: ExtendedSortField) => {
     if (field === sortField) {
       setSortDirection(sortDirection === 'desc' ? 'asc' : 'desc');
     } else {
@@ -38,7 +40,7 @@ export function Leaderboard({ agents }: LeaderboardProps) {
     }
   };
 
-  const SortHeader = ({ field, label }: { field: SortField; label: string }) => (
+  const SortHeader = ({ field, label }: { field: ExtendedSortField; label: string }) => (
     <th
       className="px-4 py-3 text-left text-sm font-medium text-gray-500 cursor-pointer hover:text-gray-700 transition-colors"
       onClick={() => handleSort(field)}
@@ -69,6 +71,7 @@ export function Leaderboard({ agents }: LeaderboardProps) {
             <SortHeader field="readyPRs" label="Ready PRs" />
             <SortHeader field="mergedPRs" label="Merged" />
             <SortHeader field="successRate" label="Success Rate" />
+            <SortHeader field="totalCommits" label="Commits" />
           </tr>
         </thead>
         <tbody className="divide-y divide-gray-100">
@@ -112,6 +115,9 @@ export function Leaderboard({ agents }: LeaderboardProps) {
                 >
                   {agent.stats.successRate.toFixed(1)}%
                 </span>
+              </td>
+              <td className="px-4 py-4 text-sm font-mono text-gray-700">
+                {formatNumber(agent.stats.totalCommits ?? 0)}
               </td>
             </tr>
           ))}

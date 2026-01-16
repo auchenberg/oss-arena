@@ -3,6 +3,7 @@ export interface AgentStats {
   readyPRs: number;
   mergedPRs: number;
   successRate: number;
+  totalCommits: number;
 }
 
 export interface ReviewStats {

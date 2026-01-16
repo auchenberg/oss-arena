@@ -6,13 +6,13 @@ const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 
 // Agent configuration for data collection
 const contributionAgents = [
-  { id: 'copilot', name: 'GitHub Copilot', color: '#6e40c9', query: 'head:copilot/' },
-  { id: 'cursor', name: 'Cursor', color: '#00d4aa', query: 'head:cursor/' },
-  { id: 'codex', name: 'OpenAI Codex', color: '#10a37f', query: 'head:codex/' },
-  { id: 'devin', name: 'Devin', color: '#ff6b6b', query: 'author:devin-ai-integration[bot]' },
-  { id: 'claude', name: 'Claude Code', color: '#d97706', query: 'author:app/claude' },
-  { id: 'jules', name: 'Jules', color: '#4285f4', query: 'author:jules-google[bot]' },
-  { id: 'codegen', name: 'Codegen', color: '#9333ea', query: 'author:codegen-sh[bot]' },
+  { id: 'copilot', name: 'GitHub Copilot', color: '#6e40c9', prQuery: 'head:copilot/', commitQuery: 'author-email:copilot@github.com' },
+  { id: 'cursor', name: 'Cursor', color: '#00d4aa', prQuery: 'head:cursor/', commitQuery: null },
+  { id: 'codex', name: 'OpenAI Codex', color: '#10a37f', prQuery: 'head:codex/', commitQuery: null },
+  { id: 'devin', name: 'Devin', color: '#ff6b6b', prQuery: 'author:devin-ai-integration[bot]', commitQuery: 'author:devin-ai-integration[bot]' },
+  { id: 'claude', name: 'Claude Code', color: '#d97706', prQuery: 'author:app/claude', commitQuery: 'author-email:noreply@anthropic.com' },
+  { id: 'jules', name: 'Jules', color: '#4285f4', prQuery: 'author:jules-google[bot]', commitQuery: 'author:jules-google[bot]' },
+  { id: 'codegen', name: 'Codegen', color: '#9333ea', prQuery: 'author:codegen-sh[bot]', commitQuery: 'author:codegen-sh[bot]' },
 ];
 
 const reviewAgents = [
@@ -61,7 +61,7 @@ async function collectContributions() {
       // Get total PRs
       const { data: allPRs } = await withRetry(() =>
         octokit.search.issuesAndPullRequests({
-          q: `is:pr ${agent.query}`,
+          q: `is:pr ${agent.prQuery}`,
           per_page: 1,
         })
       );
@@ -70,7 +70,7 @@ async function collectContributions() {
       // Get merged PRs
       const { data: mergedPRs } = await withRetry(() =>
         octokit.search.issuesAndPullRequests({
-          q: `is:pr is:merged ${agent.query}`,
+          q: `is:pr is:merged ${agent.prQuery}`,
           per_page: 1,
         })
       );
@@ -79,11 +79,28 @@ async function collectContributions() {
       // Get ready (non-draft) PRs
       const { data: readyPRs } = await withRetry(() =>
         octokit.search.issuesAndPullRequests({
-          q: `is:pr -is:draft ${agent.query}`,
+          q: `is:pr -is:draft ${agent.prQuery}`,
           per_page: 1,
         })
       );
       await delay(RATE_LIMIT_DELAY);
+
+      // Get total commits (if commit query is available)
+      let totalCommits = 0;
+      if (agent.commitQuery) {
+        try {
+          const { data: commits } = await withRetry(() =>
+            octokit.search.commits({
+              q: agent.commitQuery,
+              per_page: 1,
+            })
+          );
+          totalCommits = commits.total_count;
+          await delay(RATE_LIMIT_DELAY);
+        } catch (err) {
+          console.log(`    Could not fetch commits for ${agent.name}`);
+        }
+      }
 
       const successRate = readyPRs.total_count > 0
         ? Number(((mergedPRs.total_count / readyPRs.total_count) * 100).toFixed(2))
@@ -98,10 +115,11 @@ async function collectContributions() {
           readyPRs: readyPRs.total_count,
           mergedPRs: mergedPRs.total_count,
           successRate,
+          totalCommits,
         },
       });
 
-      console.log(`    Total: ${allPRs.total_count}, Merged: ${mergedPRs.total_count}, Rate: ${successRate}%`);
+      console.log(`    PRs: ${allPRs.total_count}, Merged: ${mergedPRs.total_count}, Commits: ${totalCommits}`);
     } catch (error) {
       console.error(`    Error querying ${agent.name}:`, error);
       // Keep previous data if query fails
@@ -114,6 +132,7 @@ async function collectContributions() {
           readyPRs: 0,
           mergedPRs: 0,
           successRate: 0,
+          totalCommits: 0,
         },
       });
     }

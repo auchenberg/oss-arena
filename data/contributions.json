@@ -9,7 +9,8 @@
         "totalPRs": 882979,
         "readyPRs": 624826,
         "mergedPRs": 594777,
-        "successRate": 95.19
+        "successRate": 95.19,
+        "totalCommits": 0
       }
     },
     {
@@ -20,7 +21,8 @@
         "totalPRs": 268339,
         "readyPRs": 157695,
         "mergedPRs": 151480,
-        "successRate": 96.06
+        "successRate": 96.06,
+        "totalCommits": 0
       }
     },
     {
@@ -31,7 +33,8 @@
         "totalPRs": 2832322,
         "readyPRs": 2810497,
         "mergedPRs": 2454047,
-        "successRate": 87.32
+        "successRate": 87.32,
+        "totalCommits": 0
       }
     },
     {
@@ -42,7 +45,8 @@
         "totalPRs": 59350,
         "readyPRs": 57567,
         "mergedPRs": 36632,
-        "successRate": 63.63
+        "successRate": 63.63,
+        "totalCommits": 0
       }
     },
     {
@@ -53,7 +57,8 @@
         "totalPRs": 3826,
         "readyPRs": 3780,
         "mergedPRs": 2868,
-        "successRate": 75.87
+        "successRate": 75.87,
+        "totalCommits": 0
       }
     },
     {
@@ -64,7 +69,8 @@
         "totalPRs": 0,
         "readyPRs": 0,
         "mergedPRs": 0,
-        "successRate": 0
+        "successRate": 0,
+        "totalCommits": 0
       }
     },
     {
@@ -75,7 +81,8 @@
         "totalPRs": 9162,
         "readyPRs": 6178,
         "mergedPRs": 3839,
-        "successRate": 62.14
+        "successRate": 62.14,
+        "totalCommits": 0
       }
     }
   ]
