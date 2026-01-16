@@ -6,11 +6,11 @@ const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 
 // Agent configuration for data collection
 const contributionAgents = [
-  { id: 'copilot', name: 'GitHub Copilot', color: '#6e40c9', prQuery: 'head:copilot/', commitQuery: 'author-email:copilot@github.com' },
+  { id: 'copilot', name: 'GitHub Copilot', color: '#6e40c9', prQuery: 'head:copilot/', commitQuery: 'author:copilot@github.com' },
   { id: 'cursor', name: 'Cursor', color: '#00d4aa', prQuery: 'head:cursor/', commitQuery: null },
   { id: 'codex', name: 'OpenAI Codex', color: '#10a37f', prQuery: 'head:codex/', commitQuery: null },
   { id: 'devin', name: 'Devin', color: '#ff6b6b', prQuery: 'author:devin-ai-integration[bot]', commitQuery: 'author:devin-ai-integration[bot]' },
-  { id: 'claude', name: 'Claude Code', color: '#d97706', prQuery: 'author:app/claude', commitQuery: 'author-email:noreply@anthropic.com' },
+  { id: 'claude', name: 'Claude Code', color: '#d97706', prQuery: 'author:app/claude', commitQuery: 'author:noreply@anthropic.com' },
   { id: 'jules', name: 'Jules', color: '#4285f4', prQuery: 'author:jules-google[bot]', commitQuery: 'author:jules-google[bot]' },
   { id: 'codegen', name: 'Codegen', color: '#9333ea', prQuery: 'author:codegen-sh[bot]', commitQuery: 'author:codegen-sh[bot]' },
 ];
