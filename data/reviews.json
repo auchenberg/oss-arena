@@ -1,13 +1,13 @@
 {
-  "lastUpdated": "2026-01-16T18:17:43.306Z",
+  "lastUpdated": "2026-01-17T00:36:58.051Z",
   "agents": [
     {
       "id": "coderabbit",
       "name": "CodeRabbit",
       "color": "#f97316",
       "stats": {
-        "totalReviews": 2367967,
-        "last7Days": 66864,
+        "totalReviews": 2369741,
+        "last7Days": 62179,
         "trend": 0
       }
     },
@@ -16,8 +16,8 @@
       "name": "Ellipsis",
       "color": "#06b6d4",
       "stats": {
-        "totalReviews": 60206,
-        "last7Days": 1057,
+        "totalReviews": 60279,
+        "last7Days": 1004,
         "trend": 0
       }
     },
@@ -26,8 +26,8 @@
       "name": "Sourcery",
       "color": "#ec4899",
       "stats": {
-        "totalReviews": 456735,
-        "last7Days": 4471,
+        "totalReviews": 456025,
+        "last7Days": 4059,
         "trend": 0
       }
     },
@@ -36,8 +36,8 @@
       "name": "Greptile",
       "color": "#22c55e",
       "stats": {
-        "totalReviews": 115011,
-        "last7Days": 6226,
+        "totalReviews": 114880,
+        "last7Days": 5753,
         "trend": 0
       }
     }
