@@ -12,7 +12,6 @@ const contributionAgents = [
   { id: 'codex', name: 'OpenAI Codex', color: '#10a37f', prQuery: 'head:codex/', commitQuery: '"OpenAI Codex"' },
   { id: 'devin', name: 'Devin', color: '#ff6b6b', prQuery: 'author:devin-ai-integration[bot]', commitQuery: 'author:devin-ai-integration[bot]' },
   { id: 'claude', name: 'Claude Code', color: '#d97706', prQuery: 'author:app/claude', commitQuery: '"Generated with Claude Code"' },
-  { id: 'jules', name: 'Jules', color: '#4285f4', prQuery: 'author:google-labs-jules[bot]', commitQuery: 'author:google-labs-jules[bot]' },
   { id: 'codegen', name: 'Codegen', color: '#9333ea', prQuery: 'author:codegen-sh[bot]', commitQuery: 'author:codegen-sh[bot]' },
   { id: 'vercel', name: 'Vercel', color: '#000000', prQuery: 'author:vercel[bot]', commitQuery: 'author:vercel[bot]' },
 ];
@@ -22,6 +21,7 @@ const reviewAgents = [
   { id: 'ellipsis', name: 'Ellipsis', color: '#06b6d4', query: 'commenter:ellipsis-dev[bot]' },
   { id: 'sourcery', name: 'Sourcery', color: '#ec4899', query: 'commenter:sourcery-ai[bot]' },
   { id: 'greptile', name: 'Greptile', color: '#22c55e', query: 'commenter:greptile-apps[bot]' },
+  { id: 'jules', name: 'Jules', color: '#4285f4', query: 'commenter:google-labs-jules[bot]' },
   // Note: Qodo Merge (qodo-merge) is a private GitHub App, cannot be searched publicly
   // { id: 'qodo', name: 'Qodo', color: '#8b5cf6', query: 'commenter:qodo-merge[bot]' },
   // Note: Mesa and Vercel Agent bots not publicly searchable on GitHub
@@ -114,6 +114,8 @@ async function collectContributions() {
         id: agent.id,
         name: agent.name,
         color: agent.color,
+        prQuery: agent.prQuery,
+        commitQuery: agent.commitQuery,
         stats: {
           totalPRs: allPRs.total_count,
           readyPRs: readyPRs.total_count,
@@ -131,6 +133,8 @@ async function collectContributions() {
         id: agent.id,
         name: agent.name,
         color: agent.color,
+        prQuery: agent.prQuery,
+        commitQuery: agent.commitQuery,
         stats: {
           totalPRs: 0,
           readyPRs: 0,

@@ -40,6 +40,16 @@
         "last7Days": 5767,
         "trend": 0
       }
+    },
+    {
+      "id": "jules",
+      "name": "Jules",
+      "color": "#4285f4",
+      "stats": {
+        "totalReviews": 238354,
+        "last7Days": 0,
+        "trend": 0
+      }
     }
   ]
 }

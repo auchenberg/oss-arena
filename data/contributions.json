@@ -5,6 +5,8 @@
       "id": "copilot",
       "name": "GitHub Copilot",
       "color": "#6e40c9",
+      "prQuery": "head:copilot/",
+      "commitQuery": "author:copilot-swe-agent[bot]",
       "stats": {
         "totalPRs": 897013,
         "readyPRs": 635382,
@@ -17,6 +19,8 @@
       "id": "cursor",
       "name": "Cursor",
       "color": "#00d4aa",
+      "prQuery": "head:cursor/",
+      "commitQuery": "\"Co-authored-by: Cursor\"",
       "stats": {
         "totalPRs": 269341,
         "readyPRs": 158349,
@@ -29,6 +33,8 @@
       "id": "codex",
       "name": "OpenAI Codex",
       "color": "#10a37f",
+      "prQuery": "head:codex/",
+      "commitQuery": "\"OpenAI Codex\"",
       "stats": {
         "totalPRs": 2847241,
         "readyPRs": 2825342,
@@ -41,6 +47,8 @@
       "id": "devin",
       "name": "Devin",
       "color": "#ff6b6b",
+      "prQuery": "author:devin-ai-integration[bot]",
+      "commitQuery": "author:devin-ai-integration[bot]",
       "stats": {
         "totalPRs": 59650,
         "readyPRs": 57861,
@@ -53,6 +61,8 @@
       "id": "claude",
       "name": "Claude Code",
       "color": "#d97706",
+      "prQuery": "author:app/claude",
+      "commitQuery": "\"Generated with Claude Code\"",
       "stats": {
         "totalPRs": 3881,
         "readyPRs": 3830,
@@ -62,21 +72,11 @@
       }
     },
     {
-      "id": "jules",
-      "name": "Jules",
-      "color": "#4285f4",
-      "stats": {
-        "totalPRs": 247754,
-        "readyPRs": 167726,
-        "mergedPRs": 159897,
-        "successRate": 95.33,
-        "totalCommits": 528680
-      }
-    },
-    {
       "id": "codegen",
       "name": "Codegen",
       "color": "#9333ea",
+      "prQuery": "author:codegen-sh[bot]",
+      "commitQuery": "author:codegen-sh[bot]",
       "stats": {
         "totalPRs": 9169,
         "readyPRs": 6183,
@@ -89,6 +89,8 @@
       "id": "vercel",
       "name": "Vercel",
       "color": "#000000",
+      "prQuery": "author:vercel[bot]",
+      "commitQuery": "author:vercel[bot]",
       "stats": {
         "totalPRs": 95550,
         "readyPRs": 49019,
