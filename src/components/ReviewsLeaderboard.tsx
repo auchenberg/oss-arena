@@ -101,7 +101,7 @@ export function ReviewsLeaderboard({ agents }: ReviewsLeaderboardProps) {
               Rank
             </th>
             <th className="px-4 py-3 text-xs font-medium text-gray-400 uppercase tracking-wider text-left">
-              Bot
+              Agent
             </th>
             <SortHeader
               field="totalReviews"
@@ -136,7 +136,7 @@ export function ReviewsLeaderboard({ agents }: ReviewsLeaderboardProps) {
                     </span>
                     <a
                       href={`https://github.com/search?q=${encodeURIComponent(
-                        `is:pr commenter:${agent.id}ai[bot]`
+                        `is:pr ${agent.query}`
                       )}&type=pullrequests`}
                       target="_blank"
                       rel="noopener noreferrer"

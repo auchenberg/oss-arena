@@ -5,6 +5,7 @@
       "id": "coderabbit",
       "name": "CodeRabbit",
       "color": "#f97316",
+      "query": "commenter:coderabbitai[bot]",
       "stats": {
         "totalReviews": 2379184,
         "last7Days": 64119,
@@ -15,6 +16,7 @@
       "id": "ellipsis",
       "name": "Ellipsis",
       "color": "#06b6d4",
+      "query": "commenter:ellipsis-dev[bot]",
       "stats": {
         "totalReviews": 60448,
         "last7Days": 1085,
@@ -25,6 +27,7 @@
       "id": "sourcery",
       "name": "Sourcery",
       "color": "#ec4899",
+      "query": "commenter:sourcery-ai[bot]",
       "stats": {
         "totalReviews": 455589,
         "last7Days": 4059,
@@ -35,6 +38,7 @@
       "id": "greptile",
       "name": "Greptile",
       "color": "#22c55e",
+      "query": "commenter:greptile-apps[bot]",
       "stats": {
         "totalReviews": 115538,
         "last7Days": 5767,
@@ -45,6 +49,7 @@
       "id": "jules",
       "name": "Jules",
       "color": "#4285f4",
+      "query": "commenter:google-labs-jules[bot]",
       "stats": {
         "totalReviews": 238354,
         "last7Days": 0,

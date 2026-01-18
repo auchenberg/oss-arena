@@ -25,6 +25,7 @@ export interface ReviewAgent {
   id: string;
   name: string;
   color: string;
+  query: string;
   stats: ReviewStats;
 }
 

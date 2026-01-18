@@ -183,6 +183,7 @@ async function collectReviews() {
         id: agent.id,
         name: agent.name,
         color: agent.color,
+        query: agent.query,
         stats: {
           totalReviews: allReviews.total_count,
           last7Days: recentReviews.total_count,
@@ -197,6 +198,7 @@ async function collectReviews() {
         id: agent.id,
         name: agent.name,
         color: agent.color,
+        query: agent.query,
         stats: {
           totalReviews: 0,
           last7Days: 0,
