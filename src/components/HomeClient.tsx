@@ -1,116 +1,108 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Leaderboard } from '@/components/Leaderboard';
-import { ReviewsLeaderboard } from '@/components/ReviewsLeaderboard';
-import { TrendChart } from '@/components/TrendChart';
-import { TabNavigation } from '@/components/TabNavigation';
-import { ViewMode, ContributionsData, ReviewsData, HistoryEntry } from '@/lib/types';
+import { Leaderboard } from "@/components/Leaderboard";
+import { TrendChart } from "@/components/TrendChart";
+import { Header } from "@/components/Header";
+import { ContributionsData, HistoryEntry } from "@/lib/types";
 
 interface HomeClientProps {
   contributions: ContributionsData;
-  reviews: ReviewsData;
   historyData: HistoryEntry[];
 }
 
-export function HomeClient({ contributions, reviews, historyData }: HomeClientProps) {
-  const [activeTab, setActiveTab] = useState<ViewMode>('contributions');
+export function HomeClient({ contributions, historyData }: HomeClientProps) {
+  // Calculate total stats
+  const totalPRs = contributions.agents.reduce(
+    (sum, agent) => sum + agent.stats.totalPRs,
+    0
+  );
+  const totalCommits = contributions.agents.reduce(
+    (sum, agent) => sum + (agent.stats.totalCommits ?? 0),
+    0
+  );
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div>
-            <h1 className="text-2xl font-bold text-gray-900">
-              OSS Arena
-            </h1>
-            <p className="text-sm text-gray-500 mt-1">
-              Tracking open-source contributions by AI Agents
-            </p>
+    <div className="min-h-screen bg-white">
+      <Header />
+
+      {/* Spacer for fixed header */}
+      <div className="h-16" />
+
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Page Title - Centered */}
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-semibold text-gray-900 mb-3">
+            Open Source Arena
+          </h1>
+          <p className="text-lg text-gray-500 mb-4">
+            Tracking open-source contributions by AI coding agents
+          </p>
+          <div className="flex items-center justify-center gap-2 text-gray-500">
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+              />
+            </svg>
+            <span className="font-semibold text-gray-700">
+              {(totalPRs + totalCommits).toLocaleString()}
+            </span>
+            <span>total contributions tracked</span>
           </div>
         </div>
-      </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Tab Navigation */}
-        <div className="bg-white rounded-t-lg border border-gray-200 border-b-0">
-          <TabNavigation activeTab={activeTab} onTabChange={setActiveTab} />
-        </div>
+        {/* Current Rankings Section */}
+        <div className="mb-8">
+          <h2 className="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
+            <span className="text-2xl">🏆</span>
+            Current rankings for contributions
+          </h2>
 
-        {/* Leaderboard */}
-        <div className="bg-white rounded-b-lg border border-gray-200 mb-8">
-          {activeTab === 'contributions' ? (
+          {/* Leaderboard */}
+          <div className="bg-white rounded-lg border border-gray-200">
             <Leaderboard agents={contributions.agents} />
-          ) : (
-            <ReviewsLeaderboard agents={reviews.agents} />
-          )}
+          </div>
         </div>
 
-        {/* Charts (only for contributions) */}
-        {activeTab === 'contributions' && (
-          <div className="space-y-8">
-            {/* Ranking Over Time */}
-            <TrendChart
-              agents={contributions.agents}
-              historyData={historyData}
-              metric="ranking"
-              title="Ranking Over Time"
-            />
-
-            {/* Total PRs Over Time */}
-            <TrendChart
-              agents={contributions.agents}
-              historyData={historyData}
-              metric="prs"
-              title="Total PRs Over Time"
-            />
-
-            {/* Total Commits Over Time */}
-            <TrendChart
-              agents={contributions.agents}
-              historyData={historyData}
-              metric="commits"
-              title="Total Commits Over Time"
-            />
-          </div>
-        )}
+        {/* Charts */}
+        <div className="space-y-8">
+          <TrendChart
+            agents={contributions.agents}
+            historyData={historyData}
+            metric="ranking"
+            title="Ranking over time"
+          />
+          <TrendChart
+            agents={contributions.agents}
+            historyData={historyData}
+            metric="prs"
+            title="Total PRs over time"
+          />
+          <TrendChart
+            agents={contributions.agents}
+            historyData={historyData}
+            metric="commits"
+            title="Total commits over time"
+          />
+        </div>
 
         {/* Footer Info */}
-        <footer className="mt-12 text-center text-sm text-gray-500">
+        <footer className="mt-12 text-center text-sm text-gray-400">
           <p>
-            Data updated:{' '}
+            Data updated:{" "}
             <time className="font-mono">
-              {new Date(
-                activeTab === 'contributions'
-                  ? contributions.lastUpdated
-                  : reviews.lastUpdated
-              ).toLocaleString('en-US', { timeZone: 'UTC' })} UTC
+              {new Date(contributions.lastUpdated).toLocaleString("en-US", {
+                timeZone: "UTC",
+              })}{" "}
+              UTC
             </time>
-          </p>
-          <p className="mt-2">
-            Source:{' '}
-            <a
-              href="https://github.com"
-              className="text-blue-500 hover:text-blue-600"
-            >
-              GitHub Search API
-            </a>
-            {' · '}
-            <a
-              href="https://github.com/auchenberg/oss-arena"
-              className="text-blue-500 hover:text-blue-600"
-            >
-              GitHub
-            </a>
-            {' · '}
-            by{' '}
-            <a
-              href="https://twitter.com/auchenberg"
-              className="text-blue-500 hover:text-blue-600"
-            >
-              @auchenberg
-            </a>
           </p>
         </footer>
       </main>
