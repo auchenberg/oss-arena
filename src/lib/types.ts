@@ -16,6 +16,8 @@ export interface ContributionAgent {
   id: string;
   name: string;
   color: string;
+  prQuery: string;
+  commitQuery: string;
   stats: AgentStats;
 }
 
