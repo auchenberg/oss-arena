@@ -22,14 +22,14 @@ export function CodeReviewsClient({ reviews }: CodeReviewsClientProps) {
       {/* Spacer for fixed header */}
       <div className="h-16" />
 
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Page Title - Centered */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-semibold text-gray-900 mb-3">
+        <div className="text-center mb-8 sm:mb-12">
+          <h1 className="text-2xl sm:text-4xl font-semibold text-gray-900 mb-2 sm:mb-3">
             Code Review Leaderboard
           </h1>
-          <p className="text-lg text-gray-500 mb-4">
-            Tracking code reviews by AI review bots
+          <p className="text-base sm:text-lg text-gray-500 mb-3 sm:mb-4">
+            Tracking open-source code reviews by AI Agents
           </p>
           <div className="flex items-center justify-center gap-2 text-gray-500">
             <svg

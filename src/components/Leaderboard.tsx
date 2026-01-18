@@ -116,7 +116,7 @@ export function Leaderboard({ agents }: LeaderboardProps) {
     align?: "left" | "right";
   }) => (
     <th
-      className={`px-4 py-3 text-xs font-medium text-gray-400 uppercase tracking-wider cursor-pointer hover:text-gray-600 transition-colors ${
+      className={`px-2 sm:px-4 py-3 text-xs font-medium text-gray-400 uppercase tracking-wider cursor-pointer hover:text-gray-600 transition-colors whitespace-nowrap ${
         align === "right" ? "text-right" : "text-left"
       }`}
       onClick={() => handleSort(field)}
@@ -143,10 +143,10 @@ export function Leaderboard({ agents }: LeaderboardProps) {
       <table className="min-w-full">
         <thead>
           <tr className="border-b border-gray-100">
-            <th className="px-4 py-3 text-xs font-medium text-gray-400 uppercase tracking-wider text-left w-20">
+            <th className="px-2 sm:px-4 py-3 text-xs font-medium text-gray-400 uppercase tracking-wider text-left w-16 sm:w-20">
               Rank
             </th>
-            <th className="px-4 py-3 text-xs font-medium text-gray-400 uppercase tracking-wider text-left">
+            <th className="px-2 sm:px-4 py-3 text-xs font-medium text-gray-400 uppercase tracking-wider text-left">
               Agent
             </th>
             <SortHeader field="totalWork" label="Total Work" align="right" />
@@ -168,35 +168,35 @@ export function Leaderboard({ agents }: LeaderboardProps) {
                 key={agent.id}
                 className="border-b border-gray-50 hover:bg-gray-50 transition-colors"
               >
-                <td className="px-4 py-4">
+                <td className="px-2 sm:px-4 py-3 sm:py-4">
                   <RankBadge rank={rank} />
                 </td>
-                <td className="px-4 py-4">
-                  <div className="flex items-center gap-3">
+                <td className="px-2 sm:px-4 py-3 sm:py-4">
+                  <div className="flex items-center gap-2 sm:gap-3">
                     <div
-                      className="w-2.5 h-2.5 rounded-full flex-shrink-0"
+                      className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full flex-shrink-0"
                       style={{ backgroundColor: agent.color }}
                     />
-                    <span className="font-medium text-gray-900">
+                    <span className="font-medium text-gray-900 text-sm sm:text-base">
                       {agent.name}
                     </span>
                   </div>
                 </td>
-                <td className="px-4 py-4 text-right">
-                  <span className="font-bold text-gray-900">
+                <td className="px-2 sm:px-4 py-3 sm:py-4 text-right">
+                  <span className="font-bold text-gray-900 text-sm sm:text-base">
                     {formatNumber(totalWork)}
                   </span>
                 </td>
-                <td className="px-4 py-4 text-right">
+                <td className="px-2 sm:px-4 py-3 sm:py-4 text-right">
                   <div className="flex items-center justify-end gap-1">
-                    <span className="text-gray-600">
+                    <span className="text-gray-600 text-sm sm:text-base">
                       {formatNumber(agent.stats.totalPRs)}
                     </span>
                     <a
                       href={`https://github.com/search?q=${encodeURIComponent(`is:pr ${agent.prQuery}`)}&type=pullrequests`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-300 hover:text-gray-500"
+                      className="text-gray-300 hover:text-gray-500 hidden sm:block"
                     >
                       <svg
                         className="w-3.5 h-3.5"
@@ -214,16 +214,16 @@ export function Leaderboard({ agents }: LeaderboardProps) {
                     </a>
                   </div>
                 </td>
-                <td className="px-4 py-4 text-right">
+                <td className="px-2 sm:px-4 py-3 sm:py-4 text-right">
                   <div className="flex items-center justify-end gap-1">
-                    <span className="text-gray-600">
+                    <span className="text-gray-600 text-sm sm:text-base">
                       {formatNumber(agent.stats.totalCommits ?? 0)}
                     </span>
                     <a
                       href={`https://github.com/search?q=${encodeURIComponent(agent.commitQuery)}&type=commits`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-300 hover:text-gray-500"
+                      className="text-gray-300 hover:text-gray-500 hidden sm:block"
                     >
                       <svg
                         className="w-3.5 h-3.5"

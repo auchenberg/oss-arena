@@ -15,7 +15,7 @@ export function Header() {
       <nav className="border-b border-gray-200">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14">
-            <div className="flex items-center gap-8">
+            <div className="flex items-center gap-4 sm:gap-8">
               <Link href="/" className="flex items-center gap-2 font-semibold text-gray-900">
                 <svg
                   width="20"
@@ -55,7 +55,7 @@ export function Header() {
                 </svg>
                 OSS Arena
               </Link>
-              <div className="flex items-center gap-6 text-sm">
+              <div className="flex items-center gap-3 sm:gap-6 text-sm">
                 <Link
                   href="/"
                   className={`${
@@ -64,7 +64,8 @@ export function Header() {
                       : "text-gray-500 hover:text-gray-700"
                   }`}
                 >
-                  Contributions leaderboard
+                  <span className="hidden sm:inline">Contributions leaderboard</span>
+                  <span className="sm:hidden">Contributions</span>
                 </Link>
                 <Link
                   href="/code-reviews"
@@ -74,11 +75,12 @@ export function Header() {
                       : "text-gray-500 hover:text-gray-700"
                   }`}
                 >
-                  Code reviews leaderboard
+                  <span className="hidden sm:inline">Code reviews leaderboard</span>
+                  <span className="sm:hidden">Reviews</span>
                 </Link>
               </div>
             </div>
-            <div className="text-sm text-gray-400">
+            <div className="hidden sm:block text-sm text-gray-400">
               built by{" "}
               <a
                 href="https://twitter.com/auchenberg"
