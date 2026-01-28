@@ -82,7 +82,7 @@ export function Header() {
             </div>
             <div className="hidden sm:flex items-center gap-4 text-sm text-gray-400">
               <a
-                href="https://github.com/anthropics/oss-arena"
+                href="https://github.com/auchenberg/oss-arena"
                 className="text-gray-400 hover:text-gray-700"
                 target="_blank"
                 rel="noopener noreferrer"
