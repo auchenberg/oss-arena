@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-05T00:45:50.549Z",
+  "lastUpdated": "2026-02-05T06:31:57.366Z",
   "agents": [
     {
       "id": "copilot",
@@ -8,11 +8,11 @@
       "prQuery": "head:copilot/",
       "commitQuery": "author:copilot-swe-agent[bot]",
       "stats": {
-        "totalPRs": 1022659,
-        "readyPRs": 727855,
-        "mergedPRs": 693450,
+        "totalPRs": 1024407,
+        "readyPRs": 729014,
+        "mergedPRs": 694556,
         "successRate": 95.27,
-        "totalCommits": 1925848
+        "totalCommits": 1930266
       }
     },
     {
@@ -22,11 +22,11 @@
       "prQuery": "head:cursor/",
       "commitQuery": "\"Co-authored-by: Cursor\"",
       "stats": {
-        "totalPRs": 278018,
-        "readyPRs": 163527,
-        "mergedPRs": 157231,
-        "successRate": 96.15,
-        "totalCommits": 130075
+        "totalPRs": 278098,
+        "readyPRs": 163574,
+        "mergedPRs": 157258,
+        "successRate": 96.14,
+        "totalCommits": 92920
       }
     },
     {
@@ -36,11 +36,11 @@
       "prQuery": "head:codex/",
       "commitQuery": "\"OpenAI Codex\"",
       "stats": {
-        "totalPRs": 3014712,
-        "readyPRs": 2991453,
-        "mergedPRs": 2612685,
-        "successRate": 87.34,
-        "totalCommits": 38281
+        "totalPRs": 3015594,
+        "readyPRs": 2992298,
+        "mergedPRs": 2613099,
+        "successRate": 87.33,
+        "totalCommits": 38773
       }
     },
     {
@@ -50,11 +50,11 @@
       "prQuery": "author:devin-ai-integration[bot]",
       "commitQuery": "author:devin-ai-integration[bot]",
       "stats": {
-        "totalPRs": 63924,
-        "readyPRs": 61995,
-        "mergedPRs": 39012,
-        "successRate": 62.93,
-        "totalCommits": 141855
+        "totalPRs": 63122,
+        "readyPRs": 61188,
+        "mergedPRs": 38564,
+        "successRate": 63.03,
+        "totalCommits": 141319
       }
     },
     {
@@ -64,11 +64,11 @@
       "prQuery": "author:app/claude",
       "commitQuery": "\"Generated with Claude Code\"",
       "stats": {
-        "totalPRs": 4146,
-        "readyPRs": 4095,
-        "mergedPRs": 3009,
-        "successRate": 73.48,
-        "totalCommits": 3683417
+        "totalPRs": 4149,
+        "readyPRs": 4098,
+        "mergedPRs": 3010,
+        "successRate": 73.45,
+        "totalCommits": 3670793
       }
     },
     {
@@ -78,10 +78,10 @@
       "prQuery": "author:codegen-sh[bot]",
       "commitQuery": "author:codegen-sh[bot]",
       "stats": {
-        "totalPRs": 9531,
-        "readyPRs": 6507,
+        "totalPRs": 9536,
+        "readyPRs": 6508,
         "mergedPRs": 4126,
-        "successRate": 63.41,
+        "successRate": 63.4,
         "totalCommits": 9313
       }
     },
@@ -92,11 +92,11 @@
       "prQuery": "author:vercel[bot]",
       "commitQuery": "author:vercel[bot]",
       "stats": {
-        "totalPRs": 114890,
-        "readyPRs": 58592,
-        "mergedPRs": 57291,
-        "successRate": 97.78,
-        "totalCommits": 130333
+        "totalPRs": 115105,
+        "readyPRs": 58697,
+        "mergedPRs": 57387,
+        "successRate": 97.77,
+        "totalCommits": 130500
       }
     }
   ]
