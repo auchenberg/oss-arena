@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-28T18:17:49.107Z",
+  "lastUpdated": "2026-03-29T00:51:28.282Z",
   "agents": [
     {
       "id": "copilot",
@@ -8,11 +8,11 @@
       "prQuery": "head:copilot/",
       "commitQuery": "author:copilot-swe-agent[bot]",
       "stats": {
-        "totalPRs": 1561658,
-        "readyPRs": 1137570,
-        "mergedPRs": 1088327,
-        "successRate": 95.67,
-        "totalCommits": 2909990
+        "totalPRs": 1564365,
+        "readyPRs": 1139895,
+        "mergedPRs": 1090601,
+        "successRate": 95.68,
+        "totalCommits": 2915904
       }
     },
     {
@@ -22,11 +22,11 @@
       "prQuery": "head:cursor/",
       "commitQuery": "\"Co-authored-by: Cursor\"",
       "stats": {
-        "totalPRs": 315648,
-        "readyPRs": 188419,
-        "mergedPRs": 181062,
+        "totalPRs": 315833,
+        "readyPRs": 188534,
+        "mergedPRs": 181180,
         "successRate": 96.1,
-        "totalCommits": 409456
+        "totalCommits": 453166
       }
     },
     {
@@ -36,11 +36,11 @@
       "prQuery": "head:codex/",
       "commitQuery": "\"OpenAI Codex\"",
       "stats": {
-        "totalPRs": 3816771,
-        "readyPRs": 3784258,
-        "mergedPRs": 3289853,
-        "successRate": 86.94,
-        "totalCommits": 97651
+        "totalPRs": 3817643,
+        "readyPRs": 3785043,
+        "mergedPRs": 3290467,
+        "successRate": 86.93,
+        "totalCommits": 97814
       }
     },
     {
@@ -50,11 +50,11 @@
       "prQuery": "author:devin-ai-integration[bot]",
       "commitQuery": "author:devin-ai-integration[bot]",
       "stats": {
-        "totalPRs": 79518,
-        "readyPRs": 76968,
-        "mergedPRs": 46801,
-        "successRate": 60.81,
-        "totalCommits": 171243
+        "totalPRs": 79595,
+        "readyPRs": 77045,
+        "mergedPRs": 46883,
+        "successRate": 60.85,
+        "totalCommits": 171316
       }
     },
     {
@@ -64,11 +64,11 @@
       "prQuery": "author:app/claude",
       "commitQuery": "\"Generated with Claude Code\"",
       "stats": {
-        "totalPRs": 8175,
-        "readyPRs": 8092,
-        "mergedPRs": 5424,
-        "successRate": 67.03,
-        "totalCommits": 4085306
+        "totalPRs": 8201,
+        "readyPRs": 8118,
+        "mergedPRs": 5434,
+        "successRate": 66.94,
+        "totalCommits": 4582909
       }
     },
     {
@@ -82,7 +82,7 @@
         "readyPRs": 6937,
         "mergedPRs": 4440,
         "successRate": 64,
-        "totalCommits": 11096
+        "totalCommits": 11097
       }
     },
     {
@@ -92,11 +92,11 @@
       "prQuery": "author:vercel[bot]",
       "commitQuery": "author:vercel[bot]",
       "stats": {
-        "totalPRs": 158176,
-        "readyPRs": 76787,
-        "mergedPRs": 74797,
-        "successRate": 97.41,
-        "totalCommits": 168691
+        "totalPRs": 158232,
+        "readyPRs": 76824,
+        "mergedPRs": 74828,
+        "successRate": 97.4,
+        "totalCommits": 168790
       }
     }
   ]
