@@ -2,29 +2,29 @@
   "date": "2026-05-22",
   "contributions": {
     "copilot": {
-      "prs": 1934020,
-      "merged": 1396668,
-      "commits": 3691516
+      "prs": 1935232,
+      "merged": 1397669,
+      "commits": 3693647
     },
     "cursor": {
-      "prs": 395095,
-      "merged": 231463,
-      "commits": 880620
+      "prs": 395830,
+      "merged": 232036,
+      "commits": 539469
     },
     "codex": {
-      "prs": 4705147,
-      "merged": 4067850,
-      "commits": 206191
+      "prs": 4711221,
+      "merged": 4073283,
+      "commits": 206145
     },
     "devin": {
-      "prs": 140472,
-      "merged": 85822,
-      "commits": 241073
+      "prs": 140328,
+      "merged": 85572,
+      "commits": 241048
     },
     "claude": {
-      "prs": 12979,
-      "merged": 8730,
-      "commits": 2702192
+      "prs": 12999,
+      "merged": 8743,
+      "commits": 4816128
     },
     "codegen": {
       "prs": 9782,
@@ -32,26 +32,26 @@
       "commits": 11721
     },
     "vercel": {
-      "prs": 198478,
-      "merged": 89748,
-      "commits": 201302
+      "prs": 198659,
+      "merged": 89799,
+      "commits": 201432
     }
   },
   "reviews": {
     "coderabbit": {
-      "count": 3841742
+      "count": 3846862
     },
     "ellipsis": {
       "count": 65515
     },
     "sourcery": {
-      "count": 595695
+      "count": 596221
     },
     "greptile": {
-      "count": 373953
+      "count": 374754
     },
     "jules": {
-      "count": 1035466
+      "count": 1036955
     }
   }
 }
