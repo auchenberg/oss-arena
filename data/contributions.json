@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-26T01:06:34.794Z",
+  "lastUpdated": "2026-05-26T07:29:07.084Z",
   "agents": [
     {
       "id": "copilot",
@@ -8,11 +8,11 @@
       "prQuery": "head:copilot/",
       "commitQuery": "author:copilot-swe-agent[bot]",
       "stats": {
-        "totalPRs": 1945940,
-        "readyPRs": 1464661,
-        "mergedPRs": 1406981,
+        "totalPRs": 1947477,
+        "readyPRs": 1465989,
+        "mergedPRs": 1408270,
         "successRate": 96.06,
-        "totalCommits": 3718205
+        "totalCommits": 3722019
       }
     },
     {
@@ -22,11 +22,11 @@
       "prQuery": "head:cursor/",
       "commitQuery": "\"Co-authored-by: Cursor\"",
       "stats": {
-        "totalPRs": 405329,
-        "readyPRs": 243283,
-        "mergedPRs": 237941,
-        "successRate": 97.8,
-        "totalCommits": 687975
+        "totalPRs": 407121,
+        "readyPRs": 244987,
+        "mergedPRs": 239744,
+        "successRate": 97.86,
+        "totalCommits": 778559
       }
     },
     {
@@ -36,11 +36,11 @@
       "prQuery": "head:codex/",
       "commitQuery": "\"OpenAI Codex\"",
       "stats": {
-        "totalPRs": 4764023,
-        "readyPRs": 4704446,
-        "mergedPRs": 4119424,
-        "successRate": 87.56,
-        "totalCommits": 215419
+        "totalPRs": 4769032,
+        "readyPRs": 4709338,
+        "mergedPRs": 4123876,
+        "successRate": 87.57,
+        "totalCommits": 215939
       }
     },
     {
@@ -50,11 +50,11 @@
       "prQuery": "author:devin-ai-integration[bot]",
       "commitQuery": "author:devin-ai-integration[bot]",
       "stats": {
-        "totalPRs": 143302,
-        "readyPRs": 139811,
-        "mergedPRs": 87679,
-        "successRate": 62.71,
-        "totalCommits": 243841
+        "totalPRs": 143707,
+        "readyPRs": 140210,
+        "mergedPRs": 87891,
+        "successRate": 62.69,
+        "totalCommits": 245175
       }
     },
     {
@@ -64,11 +64,11 @@
       "prQuery": "author:app/claude",
       "commitQuery": "\"Generated with Claude Code\"",
       "stats": {
-        "totalPRs": 13354,
-        "readyPRs": 13229,
-        "mergedPRs": 9037,
-        "successRate": 68.31,
-        "totalCommits": 3870479
+        "totalPRs": 13381,
+        "readyPRs": 13254,
+        "mergedPRs": 9062,
+        "successRate": 68.37,
+        "totalCommits": 3899703
       }
     },
     {
@@ -92,11 +92,11 @@
       "prQuery": "author:vercel[bot]",
       "commitQuery": "author:vercel[bot]",
       "stats": {
-        "totalPRs": 200630,
-        "readyPRs": 93233,
-        "mergedPRs": 90537,
+        "totalPRs": 200802,
+        "readyPRs": 93298,
+        "mergedPRs": 90600,
         "successRate": 97.11,
-        "totalCommits": 203141
+        "totalCommits": 203332
       }
     }
   ]
