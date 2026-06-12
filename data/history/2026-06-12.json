@@ -1,0 +1,57 @@
+{
+  "date": "2026-06-12",
+  "contributions": {
+    "copilot": {
+      "prs": 1983344,
+      "merged": 1436050,
+      "commits": 3821546
+    },
+    "cursor": {
+      "prs": 456756,
+      "merged": 270877,
+      "commits": 572604
+    },
+    "codex": {
+      "prs": 5011856,
+      "merged": 4337388,
+      "commits": 248724
+    },
+    "devin": {
+      "prs": 162758,
+      "merged": 96330,
+      "commits": 257842
+    },
+    "claude": {
+      "prs": 15929,
+      "merged": 11011,
+      "commits": 2498178
+    },
+    "codegen": {
+      "prs": 9565,
+      "merged": 4116,
+      "commits": 11731
+    },
+    "vercel": {
+      "prs": 211129,
+      "merged": 94179,
+      "commits": 216843
+    }
+  },
+  "reviews": {
+    "coderabbit": {
+      "count": 4205967
+    },
+    "ellipsis": {
+      "count": 65325
+    },
+    "sourcery": {
+      "count": 629362
+    },
+    "greptile": {
+      "count": 430972
+    },
+    "jules": {
+      "count": 1184280
+    }
+  }
+}
