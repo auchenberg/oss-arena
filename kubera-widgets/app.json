@@ -12,7 +12,10 @@
       "supportsTablet": false,
       "icon": "./assets/expo.icon",
       "entitlements": {
-        "com.apple.security.application-groups": ["group.com.auchenberg.kuberawidgets"]
+        "com.apple.security.application-groups": ["group.com.auchenberg.kuberawidgets"],
+        "keychain-access-groups": [
+          "$(AppIdentifierPrefix)com.auchenberg.kuberawidgets.shared"
+        ]
       }
     },
     "android": {

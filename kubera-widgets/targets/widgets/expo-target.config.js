@@ -11,8 +11,10 @@ module.exports = (config) => ({
     $widgetBackground: { color: '#0B0E1A', darkColor: '#0B0E1A' },
   },
   entitlements: {
-    // Share credentials, settings and the cached snapshot with the app.
+    // Settings and the cached snapshot are shared via the App Group;
+    // credentials live in the shared Keychain access group.
     'com.apple.security.application-groups':
       config.ios.entitlements['com.apple.security.application-groups'],
+    'keychain-access-groups': config.ios.entitlements['keychain-access-groups'],
   },
 });

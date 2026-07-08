@@ -1,13 +1,21 @@
 import Foundation
+import Security
 
 /// Keys and models shared with the React Native app.
 /// Keep in sync with `src/lib/shared-storage.ts` and `src/lib/types.ts`.
 enum SharedKeys {
     static let appGroup = "group.com.auchenberg.kuberawidgets"
-    static let credentials = "kubera.credentials"
+    /// Legacy NSUserDefaults location for credentials (pre-Keychain builds).
+    static let legacyCredentials = "kubera.credentials"
     static let selectedPortfolioId = "kubera.selectedPortfolioId"
     static let settings = "kubera.settings"
     static let snapshot = "kubera.snapshot"
+
+    /// Keychain coordinates for credentials. expo-secure-store stores items
+    /// under "<keychainService>:no-auth", so these must stay in sync with
+    /// `src/lib/credential-store.ts`.
+    static let keychainService = "kubera-widgets:no-auth"
+    static let keychainAccount = "kubera.credentials"
 }
 
 struct KuberaCredentials: Codable {
@@ -64,7 +72,13 @@ enum SharedStore {
     }
 
     static func credentials() -> KuberaCredentials? {
-        decode(KuberaCredentials.self, forKey: SharedKeys.credentials)
+        if let creds = Keychain.credentials() {
+            return creds
+        }
+        // Pre-Keychain builds stored credentials in the App Group defaults.
+        // The app migrates them on next launch; until then, keep widgets
+        // working by falling back to the old location.
+        return decode(KuberaCredentials.self, forKey: SharedKeys.legacyCredentials)
     }
 
     static func selectedPortfolioId() -> String? {
@@ -83,6 +97,30 @@ enum SharedStore {
         guard let data = try? JSONEncoder().encode(snapshot),
               let raw = String(data: data, encoding: .utf8) else { return }
         defaults?.set(raw, forKey: SharedKeys.snapshot)
+    }
+}
+
+/// Read-only access to the credentials the app stores with expo-secure-store.
+/// No kSecAttrAccessGroup is specified: the query searches every access group
+/// this extension is entitled to, which includes the shared
+/// `$(AppIdentifierPrefix)com.auchenberg.kuberawidgets.shared` group the app
+/// writes into (first entry in both targets' keychain-access-groups).
+enum Keychain {
+    static func credentials() -> KuberaCredentials? {
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrService as String: SharedKeys.keychainService,
+            kSecAttrAccount as String: Data(SharedKeys.keychainAccount.utf8),
+            kSecReturnData as String: true,
+            kSecMatchLimit as String: kSecMatchLimitOne,
+        ]
+
+        var result: AnyObject?
+        let status = SecItemCopyMatching(query as CFDictionary, &result)
+        guard status == errSecSuccess, let data = result as? Data else {
+            return nil
+        }
+        return try? JSONDecoder().decode(KuberaCredentials.self, from: data)
     }
 }
 

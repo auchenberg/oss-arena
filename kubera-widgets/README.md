@@ -30,11 +30,12 @@ In the app:
 ┌─────────────┐   HMAC-signed GET    ┌──────────────────┐
 │  Expo app   │ ───────────────────▶ │  api.kubera.com  │
 └──────┬──────┘                      └──────────────────┘
-       │ writes snapshot + creds + settings        ▲
+       │ creds → shared Keychain group             ▲
+       │ snapshot + settings → App Group defaults  │
        ▼                                           │
 ┌─────────────────────────────┐    independent     │
-│ App Group NSUserDefaults    │    refresh (30m)   │
-│ group.com.auchenberg.…      │ ◀──────────────────┤
+│ Keychain (access group)     │    refresh (30m)   │
+│ App Group NSUserDefaults    │ ◀──────────────────┤
 └──────┬──────────────────────┘                    │
        ▼ reads                                     │
 ┌─────────────────────────────┐                    │
@@ -45,6 +46,11 @@ In the app:
 - Requests are signed with `HMAC-SHA256(secret, apiKey + timestamp + METHOD + path)` —
   implemented twice, in `src/lib/kubera.ts` (app) and `targets/widgets/KuberaAPI.swift`
   (widget), so widgets refresh themselves even when the app hasn't been opened in days.
+- Credentials are stored in the iOS Keychain (`expo-secure-store`, accessible after
+  first unlock) inside a keychain access group shared with the widget extension. The
+  shared group is listed first in both targets' `keychain-access-groups`, so writes
+  default into it — no team-ID string is needed at runtime. Only the non-sensitive-ish
+  display snapshot and settings go through App Group `NSUserDefaults`.
 - Opening the app (or tapping "Update widget data now") refreshes the shared snapshot
   and reloads all widget timelines immediately.
 - All calls are read-only. There is no backend server — the device talks to Kubera directly.
@@ -83,7 +89,8 @@ Widgets don't run in Expo Go — a dev build is required.
 
 ## Notes & future work
 
-- Credentials live in App Group `NSUserDefaults` so the widget process can read them.
-  A hardening step would be a shared Keychain access group instead.
 - Possible next widgets: net worth sparkline (needs history endpoint), Live Activity
   for market hours, per-widget portfolio selection via AppIntents configuration.
+- The cached snapshot in App Group defaults contains portfolio values (needed for
+  offline widget rendering); moving it into the Keychain too would be maximal
+  hardening at the cost of some complexity.

@@ -1,5 +1,6 @@
 import { createContext, useCallback, useContext, useMemo, useState } from 'react';
 
+import { credentialStore } from '@/lib/credential-store';
 import { getPortfolioSnapshot, listPortfolios } from '@/lib/kubera';
 import { getJSON, setJSON, SharedKeys, sharedStore } from '@/lib/shared-storage';
 import {
@@ -28,7 +29,7 @@ const StoreContext = createContext<KuberaStore | null>(null);
 
 export function KuberaProvider({ children }: { children: React.ReactNode }) {
   const [credentials, setCredentials] = useState<KuberaCredentials | null>(() =>
-    getJSON<KuberaCredentials>(SharedKeys.credentials)
+    credentialStore.get()
   );
   const [portfolios, setPortfolios] = useState<PortfolioListItem[]>([]);
   const [selectedPortfolioId, setSelectedPortfolioId] = useState<string | null>(() =>
@@ -59,7 +60,7 @@ export function KuberaProvider({ children }: { children: React.ReactNode }) {
       }
       setCredentials(creds);
       setPortfolios(found);
-      setJSON(SharedKeys.credentials, creds);
+      credentialStore.set(creds);
 
       const portfolioId = found[0].id;
       setSelectedPortfolioId(portfolioId);
@@ -74,7 +75,7 @@ export function KuberaProvider({ children }: { children: React.ReactNode }) {
     setPortfolios([]);
     setSelectedPortfolioId(null);
     setSnapshot(null);
-    sharedStore.remove(SharedKeys.credentials);
+    credentialStore.clear();
     sharedStore.remove(SharedKeys.selectedPortfolioId);
     sharedStore.remove(SharedKeys.snapshot);
     sharedStore.reloadWidgets();

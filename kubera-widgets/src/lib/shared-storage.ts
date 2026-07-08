@@ -8,6 +8,11 @@ export const APP_GROUP = 'group.com.auchenberg.kuberawidgets';
 
 /** Keys shared with the widget extension — keep in sync with targets/widgets/Shared.swift */
 export const SharedKeys = {
+  /**
+   * Legacy location only: pre-Keychain builds stored credentials here.
+   * Credentials now live in the Keychain (see credential-store.ts); this key
+   * is kept so migration can clean it up.
+   */
   credentials: 'kubera.credentials',
   selectedPortfolioId: 'kubera.selectedPortfolioId',
   settings: 'kubera.settings',

@@ -84,9 +84,9 @@ export default function SettingsScreen() {
       <SectionTitle>Data & privacy</SectionTitle>
       <Card>
         <Text style={{ color: colors.dim, fontSize: 14, lineHeight: 20 }}>
-          Your API key and portfolio data live only on this device, in storage shared with the
-          widget extension. The app talks directly to api.kubera.com — there is no middleman
-          server. All requests are read-only.
+          Your API key is stored in the iOS Keychain, in an access group shared only with the
+          widget extension. Portfolio data is cached on-device for the widgets. The app talks
+          directly to api.kubera.com — there is no middleman server. All requests are read-only.
         </Text>
       </Card>
 
