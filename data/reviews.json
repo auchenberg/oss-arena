@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-19T12:45:31.548Z",
+  "lastUpdated": "2026-10-19T22:14:55.341Z",
   "agents": [
     {
       "id": "coderabbit",
@@ -7,8 +7,8 @@
       "color": "#f97316",
       "query": "commenter:coderabbitai[bot]",
       "stats": {
-        "totalReviews": 8048246,
-        "last7Days": 346545,
+        "totalReviews": 8076741,
+        "last7Days": 371036,
         "trend": 0
       }
     },
@@ -29,8 +29,8 @@
       "color": "#ec4899",
       "query": "commenter:sourcery-ai[bot]",
       "stats": {
-        "totalReviews": 969012,
-        "last7Days": 26051,
+        "totalReviews": 970708,
+        "last7Days": 27777,
         "trend": 0
       }
     },
@@ -40,8 +40,8 @@
       "color": "#22c55e",
       "query": "commenter:greptile-apps[bot]",
       "stats": {
-        "totalReviews": 1007653,
-        "last7Days": 45922,
+        "totalReviews": 1012311,
+        "last7Days": 49668,
         "trend": 0
       }
     },
@@ -51,8 +51,8 @@
       "color": "#4285f4",
       "query": "commenter:google-labs-jules[bot]",
       "stats": {
-        "totalReviews": 1741914,
-        "last7Days": 23258,
+        "totalReviews": 1745954,
+        "last7Days": 24679,
         "trend": 0
       }
     }
